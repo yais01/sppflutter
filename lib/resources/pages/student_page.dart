@@ -64,7 +64,7 @@ class _StudentPageState extends NyState<StudentPage> {
           padding: const EdgeInsets.all(10.0),
           child: HorizontalDataTable(
             leftHandSideColumnWidth: 100,
-            rightHandSideColumnWidth: 750,
+            rightHandSideColumnWidth: 800,
             isFixedHeader: true,
             headerWidgets: _getTitleWidget(),
             leftSideItemBuilder: _generateFirstColumnRow,
@@ -90,8 +90,9 @@ class _StudentPageState extends NyState<StudentPage> {
       _getTitleItemWidget('Nama', 100),
       _getTitleItemWidget('Kamar', 100),
       _getTitleItemWidget('Tempat Tanggal Lahir', 200),
-      _getTitleItemWidget('No Telepon', 200),
-      _getTitleItemWidget('Aksi', 200),
+      _getTitleItemWidget('Alamat', 100),
+      _getTitleItemWidget('No Telepon', 100),
+      _getTitleItemWidget('Aksi', 100),
     ];
   }
 
@@ -150,8 +151,15 @@ class _StudentPageState extends NyState<StudentPage> {
           alignment: Alignment.centerLeft,
         ),
         Container(
+          child: Text(listStudents[index]['alamat'].toString()),
+          width: 100,
+          height: 52,
+          padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
+          alignment: Alignment.centerLeft,
+        ),
+        Container(
           child: Text(listStudents[index]['no_telp'].toString()),
-          width: 200,
+          width: 100,
           height: 52,
           padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
           alignment: Alignment.centerLeft,
@@ -168,12 +176,6 @@ class _StudentPageState extends NyState<StudentPage> {
                     Icon(
                       Icons.delete,
                       color: Colors.red,
-                    ),
-                    Text(
-                      'Hapus',
-                      style: TextStyle(
-                        color: Colors.red,
-                      ),
                     ),
                   ],
                 ),
@@ -199,18 +201,12 @@ class _StudentPageState extends NyState<StudentPage> {
                       Icons.edit,
                       color: Colors.amber,
                     ),
-                    Text(
-                      'Edit',
-                      style: TextStyle(
-                        color: Colors.amber,
-                      ),
-                    ),
                   ],
                 ),
               ),
             ],
           ),
-          width: 200,
+          width: 100,
           height: 52,
           padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
           alignment: Alignment.centerLeft,
